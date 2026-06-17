@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { PRODUCT_TYPES } from '@/lib/constants/petCategories';
+import Image from 'next/image';
 import { slugify } from '@/lib/utils/slugify';
 import type { Product } from '@/types/product';
 
@@ -273,7 +274,9 @@ export function ProductForm({ product }: { product?: Product }) {
           className="block w-full text-sm text-gray-500 file:mr-3 file:rounded-md file:border-0 file:bg-primary file:px-3 file:py-1.5 file:text-xs file:font-medium file:text-white hover:file:bg-primary-hover"
         />
         {imagePreview && (
-          <img src={imagePreview} alt="Preview" className="mt-2 h-32 w-32 rounded-lg object-cover border border-border" />
+          <div className="relative mt-2 h-32 w-32 overflow-hidden rounded-lg border border-border">
+            <Image src={imagePreview} alt="Preview" fill className="object-cover" unoptimized />
+          </div>
         )}
         {uploading && <p className="mt-1 text-xs text-gray-500">Uploading image…</p>}
       </div>

@@ -69,7 +69,7 @@ export function CartDrawer() {
               <div className="mb-1.5 flex items-center gap-2">
                 <Truck className={`h-4 w-4 flex-shrink-0 ${hasFreeDelivery ? 'text-primary' : 'text-gray-400'}`} />
                 {hasFreeDelivery ? (
-                  <p className="text-xs font-semibold text-primary">🎉 You've unlocked FREE delivery!</p>
+                  <p className="text-xs font-semibold text-primary">🎉 You&apos;ve unlocked FREE delivery!</p>
                 ) : (
                   <p className="text-xs text-gray-600">
                     Add <span className="font-bold text-primary">{formatPrice(remainingForFreeDelivery)}</span> more for free delivery
